@@ -1,10 +1,12 @@
 import { Request, Response } from "express";
 import { googleAI } from "../config/openaiConfig";
+import  userInfoSch from "../models/userInfoModel";
 
 // Define the ResumeRequest interface
 interface ResumeRequest {
   userInfo: string;
 }
+
 
 // Helper function to validate the user input
 const validateUserInfo = (userInfo: string): boolean => {
@@ -158,6 +160,26 @@ export const giveResponse = async (
     // Parse the generated JSON to ensure it is valid
     try {
       const parsedResume = JSON.parse(generatedResume);
+
+    let user = await userInfoSch.findOne({ email: parsedResume.email });
+    if (!user) {
+      user = new userInfoSch({
+        name: parsedResume.name,
+        email: parsedResume.email,
+        phone: parsedResume.phone,
+        location: parsedResume.location,
+        links: parsedResume.links,
+        summary: parsedResume.summary,
+      });
+    } else {
+      user.name = parsedResume.name;
+      user.phone = parsedResume.phone;
+      user.location = parsedResume.location;
+      user.links = parsedResume.links;
+      user.summary = parsedResume.summary;
+      }
+    await user.save();
+      
       return res.json({ success: true, resume: parsedResume });
     } catch (error) {
       console.error("Error parsing JSON:", error);

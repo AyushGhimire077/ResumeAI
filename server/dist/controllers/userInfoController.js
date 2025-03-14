@@ -8,9 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.giveResponse = void 0;
 const openaiConfig_1 = require("../config/openaiConfig");
+const userInfoModel_1 = __importDefault(require("../models/userInfoModel"));
 // Helper function to validate the user input
 const validateUserInfo = (userInfo) => {
     return typeof userInfo === "string" && userInfo.trim().length >= 10;
@@ -120,7 +124,7 @@ const generateResumePrompt = (userInfo) => {
 
     **Additional Instructions:**
     - Complete the user deilt if incompleted or make better, only if you think needed
-    - Improve summary to 4-5 lines
+    - Improve summary to 3-4 lines
     - Imporve everything , if need and you think but with user input and while filfulling other data.
     - Fullfilling other data should be realted (or may possible) to user input(if possible , if not then skip that).
     - If any section is missing, skip it or use general details as per user input, If you think it is important and can be possible . 
@@ -152,6 +156,25 @@ const giveResponse = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         // Parse the generated JSON to ensure it is valid
         try {
             const parsedResume = JSON.parse(generatedResume);
+            let user = yield userInfoModel_1.default.findOne({ email: parsedResume.email });
+            if (!user) {
+                user = new userInfoModel_1.default({
+                    name: parsedResume.name,
+                    email: parsedResume.email,
+                    phone: parsedResume.phone,
+                    location: parsedResume.location,
+                    links: parsedResume.links,
+                    summary: parsedResume.summary,
+                });
+            }
+            else {
+                user.name = parsedResume.name;
+                user.phone = parsedResume.phone;
+                user.location = parsedResume.location;
+                user.links = parsedResume.links;
+                user.summary = parsedResume.summary;
+            }
+            yield user.save();
             return res.json({ success: true, resume: parsedResume });
         }
         catch (error) {
