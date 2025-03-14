@@ -24,6 +24,7 @@ app.use('/api', openResponse_1.default);
 app.get("/", (req, res) => {
     res.send("Hello, world!");
 });
-exports.default = (req, res) => {
-    return app(req, res);
-};
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
