@@ -116,7 +116,7 @@ const generateResumePrompt = (userInfo: string): string => {
 
     **Additional Instructions:**
     - Complete the user deilt if incompleted or make better, only if you think needed
-    - Improve summary to 4-5 lines
+    - Improve summary to 3-4 lines
     - Imporve everything , if need and you think but with user input and while filfulling other data.
     - Fullfilling other data should be realted (or may possible) to user input(if possible , if not then skip that).
     - If any section is missing, skip it or use general details as per user input, If you think it is important and can be possible . 
