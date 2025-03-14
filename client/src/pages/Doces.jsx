@@ -14,19 +14,19 @@ const DocsPage = () => {
           </h2>
           <p className="text-lg">
             Welcome to the Resume Generator! Our tool helps you create a
-            professional resume in minutes. To get started, simply follow the
+            professional resume in few seconds. To get started, simply follow the
             steps below to generate a resume that will stand out to employers.
           </p>
           <ol className="list-decimal pl-6 space-y-2">
             <li>Click the "Create Resume" button on the homepage.</li>
-            <li>Fill in the required information across different sections.</li>
-            <li>Review and download your resume in PDF format.</li>
+            <li>Provide the information required to generate your resume.</li>
+            <li>Download your resume in PDF format.</li>
           </ol>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold text-cyan-700">
-            Inputs Required to Generate a Great Resume
+            Things you should add to Generate a Great Resume
           </h2>
 
           <div className="space-y-4">
