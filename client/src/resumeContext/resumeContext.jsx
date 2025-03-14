@@ -8,15 +8,15 @@ const ResumeProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [resume, setResume] = useState(null);
 
+    const backendURI = "https://resume-ai-backend-sigma.vercel.app"
+
 
     //Post Resume info 
     const resumeInfo = async (userInfo) => {
         setIsLoading(true);
         try {
-            const { data } = await axios.post(
-              "http://localhost:3000/api/get-resume",
-              {userInfo}
-            );
+       const { data } = await axios.post(`${backendURI}/api/get-resume`, { userInfo });
+
             if (data.success) {
                 setResume(data.resume);
             } else {
