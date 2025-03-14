@@ -172,7 +172,7 @@ const generatedPDF = () => {
                       {exp.title} at {exp.company}
                     </h4>
                     <p>
-                      {exp.dates} | {exp.location}
+                      {exp.dates}  {exp.location}
                     </p>
                     {exp.responsibilities?.length > 0 && (
                       <span>
