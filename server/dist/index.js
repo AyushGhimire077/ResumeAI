@@ -12,7 +12,7 @@ const openResponse_1 = __importDefault(require("./routes/openResponse"));
 const app = (0, express_1.default)();
 //middlewares
 app.use((0, cors_1.default)({
-    origin: "http://localhost:5173", // Allow frontend to access backend
+    origin: "https://resume-generator-gamma-one.vercel.app/", // Allow frontend to access backend
     methods: ["GET", "POST"], // Allow GET and POST methods
     allowedHeaders: ["Content-Type"], // Allow specific headers
 }));
