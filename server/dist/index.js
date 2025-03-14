@@ -11,11 +11,7 @@ const connectDB_1 = require("./config/connectDB");
 const openResponse_1 = __importDefault(require("./routes/openResponse"));
 const app = (0, express_1.default)();
 //middlewares
-app.use((0, cors_1.default)({
-    origin: "https://resume-generator-gamma-one.vercel.app/", // Allow frontend to access backend
-    methods: ["GET", "POST"], // Allow GET and POST methods
-    allowedHeaders: ["Content-Type"], // Allow specific headers
-}));
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 //rest apis
 app.use('/api', openResponse_1.default);

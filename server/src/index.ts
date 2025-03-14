@@ -9,13 +9,7 @@ import openRouter from "./routes/openResponse";
 const app = express();
 
 //middlewares
-app.use(
-  cors({
-    origin: "https://resume-generator-gamma-one.vercel.app/", // Allow frontend to access backend
-    methods: ["GET", "POST"], // Allow GET and POST methods
-    allowedHeaders: ["Content-Type"], // Allow specific headers
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
