@@ -11,7 +11,7 @@ const app = express();
 //middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow frontend to access backend
+    origin: "https://resume-generator-gamma-one.vercel.app/", // Allow frontend to access backend
     methods: ["GET", "POST"], // Allow GET and POST methods
     allowedHeaders: ["Content-Type"], // Allow specific headers
   })
