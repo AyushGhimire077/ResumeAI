@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from 'cors'
-
-
+import 'dotenv/config'
+import { VercelRequest, VercelResponse } from "@vercel/node";
 //files import
 import { connectDB } from "./config/connectDB";
 import openRouter from "./routes/openResponse";
@@ -25,14 +25,10 @@ app.use('/api', openRouter)
 //connect to db
 connectDB();
 
-
-
-
-
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, world!");
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+export default (req: VercelRequest, res: VercelResponse) => {
+  return app(req, res);
+};
