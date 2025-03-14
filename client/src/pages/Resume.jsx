@@ -23,7 +23,7 @@ const ResumeGenerator = () => {
 const generatedPDF = () => {
   const element = document.querySelector(".resume-page");
   const customWidth = 20;
-  const customHeight = 20;
+  const customHeight = 25;
   
   element.style.gap = "6px";
 
