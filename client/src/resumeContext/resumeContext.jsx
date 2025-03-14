@@ -7,6 +7,7 @@ const ResumeProvider = ({ children }) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [resume, setResume] = useState(null);
+    const [checkBox, setCheckBox] = useState(true);
 
     const backendURI = "https://resume-ai-backend-sigma.vercel.app"
 
@@ -33,6 +34,8 @@ const ResumeProvider = ({ children }) => {
       resumeInfo,
       resume,
       isLoading,
+        checkBox,
+      setCheckBox,
     };
     
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ResumeContext } from "../resumeContext/resumeContext.jsx";
 import html2pdf from "html2pdf.js";
 import '../customResume/custom1.css';
@@ -7,17 +7,20 @@ const ResumeGenerator = () => {
   const { isLoading: loading, resume, resumeInfo } = useContext(ResumeContext);
   const [userInfo, setUserInfo] = useState("");
 
-  useEffect(() => {
-    console.log(resume); 
-  }, [resume]);
+  const savedCheckBox = JSON.parse(localStorage.getItem("resumeCheckBox"));
 
   const handleChange = (e) => {
     setUserInfo(e.target.value);
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    resumeInfo(userInfo);
+    if (savedCheckBox) {
+      resumeInfo(userInfo);
+    } else {
+      alert("Please accept the terms and conditions.");
+    }
   };
 
 const generatedPDF = () => {
