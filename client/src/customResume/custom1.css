@@ -1,0 +1,507 @@
+
+.container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.form-container{
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+.form-container h2{
+  text-align: center;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 26px;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .container hr{
+    display: none;
+  }
+  .form-container{
+    width: 80%;
+    margin: 100px auto;
+  }
+  .form-container h2{
+    font-size: 20px;
+  }
+  .form-container textarea{
+    width: 100%;
+  }
+}
+
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container hr{
+  width: 0.1px;
+  height: 700px;
+  margin: auto;
+  box-shadow: 3px 4px 4px rgba(255, 243, 243, 0.777);
+  background-color: #ccc;
+}
+.resume-container {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+  color: #2d2d2d;
+}
+
+.download-btn{
+  padding: 8px 10px;
+  position: absolute;
+  right: 3%;
+  bottom: 2%;
+  background-color: #116D6E;
+  color: #f8f9fade;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.6s ease;
+}
+.download-btn:hover{
+  background-color: #0a5b5c;
+}
+/* Header Section */
+.upper-info {
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.summary h3 {
+  margin: 1px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.summary p{
+  margin: 0;
+  font-size: 12px;
+}
+.languages h3 { 
+  margin: 1px 0;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 1px 0;
+}
+.languages p{
+  margin: 1px 0;
+  padding-left: 8px;
+  font-size: 12px;
+}
+.technical-skills h3 {
+  margin:0;
+  padding-top: 3px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.technical-skills h4{
+  margin: 1px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.technical-skills ul{
+  margin: 1px 0;
+}
+.technical-skills ul li{
+  margin: 0;
+  font-size: 12px;
+}
+.skills-divider{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.skills-divider p{
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+.tech p{
+  display: flex;
+  gap: 0.5rem;
+
+}
+.tech{
+  display: flex;
+  align-items: center;
+  gap:0.2rem;
+  padding: 1px ;
+}
+.portfolio h3{
+  margin: 1px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.upper-info h2 {
+  margin: 2px 0;
+  font-weight: 500;
+}
+.upper-info .upper-more-info{
+   display: flex;
+   justify-content: space-between;
+   padding: 0 5px;
+}
+.upper-right-info{
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+}
+.professional-experience h3{
+  margin:2px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.experience h4{
+  padding-left: 10px;
+  margin: 1px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.experience p{
+  font-size: 13px;
+  padding-left: 24px;
+}
+.experience ul{
+  padding-left: 54px;
+  margin: 2px 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+.experience span{
+  margin: 1px 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+.experience span li{
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0 30px;
+}
+
+.upper-left-info{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 10px;
+}
+.summary{
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 3px;
+}
+.education h3{
+  margin: 2px 0;
+  padding-top: 4px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.education h4{
+  margin: 0;
+  padding-left: 13px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.education p{
+  margin: 0;
+  padding-left: 24px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+.certifications h3{
+  margin:1px 0;
+  padding-top: 4px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.certifications h4{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.projects h3{
+  margin:2px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.projects h4{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.projects p{
+  margin: 0;
+  padding-left: 24px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.projects p span{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.certifications h4{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.certifications p{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+textarea {
+  border-radius: 15px;
+  background-color: #ccc;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  width: 70%;
+  border: 3px solid #8CABFF;
+  resize: vertical;
+}
+.certifications p {
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.certifications h4{
+  margin: 0;
+  padding-left: 12px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.generate-button{
+  padding: 14px 24px;
+  background-color: #116D6E;
+  border-radius: 25px;
+  color: #ccc;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease; 
+}
+.generate-button:hover{
+  background-color: #0a5b5c;
+  color: #ffffffb0;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.4rem;
+  color: #2a5c7c;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Experience/Education Items */
+.experience-item,
+.education-item {
+  margin-bottom: 1.8rem;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.company-name {
+  font-weight: 500;
+  color: #2a5c7c;
+}
+
+.dates {
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+}
+
+.accomplishment-list {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.accomplishment-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.accomplishment-list li::before {
+  content: "•";
+  color: #2a5c7c;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.resume-page {
+  width: 100%;
+  height: 100%;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.skill-category h4 {
+  font-size: 1rem;
+  color: #2a5c7c;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-list li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+/* Education Section */
+.degree-info {
+  font-weight: 600;
+  color: #333;
+}
+
+.gpa {
+  font-style: italic;
+  color: #666;
+}
+
+/* Projects Section */
+.project-item {
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.project-links a {
+  color: #2a5c7c;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+p{
+  margin: 0;
+}
+
+/* Print Styles */
+@media print {
+  .resume-container {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .section-title {
+    page-break-after: avoid;
+  }
+  
+  .experience-item {
+    page-break-inside: avoid;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Color Scheme Adjustments */
+a {
+  color: #2a5c7c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1d435c;
+  text-decoration: underline;
+}
