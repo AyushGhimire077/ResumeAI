@@ -22,12 +22,13 @@ const generateResumePrompt = (userInfo: string): string => {
     **Rules:**
     - If any section is missing, omit it.
     - Try to fillfull all filed with data from user information(if possible , if not then skip that). 
-    - Like if education is not provided then add self learning or something like this(better of appying to companies).
-    - Try to fillfull all fields with provided data(as far possible , if not then skip that).
+    - Like if education is not provided then keep ongoing or reading(better of appying to companies)but if user said skip or dont add eduation then skip it.
+    - Try to fillfull all fields with provided data(as far possible , if not then skip that), dont add any fake data and if user said to remove that then remove it ,skip it.
     - In tech use only one name like Tailwind not TailwindCSS or Tailwind CSS.
     - If exprecience is fresher or not define but project is meantion try to make expercerience one year of exp in that filed by creating different projects . 
     - If a section is incomplete or vague, use general details or fill in gaps.
     - Format the response strictly as JSON with no extra text.
+    - No need to add professionalExperience if not provided by user , just skip.
     - In lagauage add english by default and add other languages as per user information like where to loction of user is.
     
 
