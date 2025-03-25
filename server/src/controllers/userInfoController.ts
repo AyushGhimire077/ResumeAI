@@ -30,6 +30,12 @@ const generateResumePrompt = (userInfo: string): string => {
     - Format the response strictly as JSON with no extra text.
     - In lagauage add english by default and add other languages as per user information like where to loction of user is.
     
+
+    Note:
+    -If user is defining something that he does have then skip that field , dont add anything if user id defining.
+
+    Keep note important dont miss note.
+
     **Expected JSON structure:**
     {
       "name": "John Doe",
